@@ -44,6 +44,10 @@ git push (평상시)
 
 cd .. : 이전 폴더로 이동
 
+cd : 첫 폴더로 이동
+
+cd /c : c 드라이브로 이동
+
 cd til/ : til 폴더로 이동
 
 mkdir til : til 폴더 생성
@@ -63,3 +67,5 @@ gitignore.io
 .gitignore : Project에 원하지 않는 Backup File이나 Log File , 혹은 컴파일 된 파일들을 Git에서 제외시킬수 있는 설정 File
 
 echo "text.txt" .. /.gitignore
+
+ㅎㅎ
