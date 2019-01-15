@@ -2,7 +2,7 @@ def counting_sort(A, B, C)
     for i in range(len(A)):  # counting
         C[A[i]] += 1
 
-    for i in range(1, len(C)):  #
+    for i in range(1, len(C)):  # 누적 (index값을 주기 위해서)
         C[i] += C[i-1]
 
     for i in range(len(B)-1, -1, -1):
