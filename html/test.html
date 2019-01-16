@@ -1,0 +1,220 @@
+<!-- !+TAP 하면 자동으로 다쳐짐 -->
+<!doctype html>   <!--타입이 html이라고 선언  -->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>프로그래밍 교육</title> <!--페이지 이름-->
+    <!-- 스크롤 만들기 - 높이를 늘림 -->
+    <!-- 테이블 속성 설정 -->
+    <style>                       
+        body {
+            height: 10000px;      
+        }
+        table, tr, td {
+            border: 1px solid darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- #edu(키값) 에서 edu로 이동 -->
+    <h1 id="edu">프로그래밍 교육</h1>
+    <!-- 링크 사이트 -->
+    <a href="reference.html">참고사이트</a>
+    <!-- 클릭하면 python위치로 이동 #python : 시작점 설정-->
+    <!-- alt : 이미지 설명, 엑박떴을 때 나옴(그냥 사용함) -->
+    <!-- 이미지를 누르면 python 위치로 이동 -->
+    <a href="#python">
+        <img src="images/python-1.png" alt="python">
+    </a>    
+    <hr>
+    <!-- target="_blank" : 새 창에서 실행 -->
+    <h2><a href="https://docs.python.org/3/" target="_blank">파이썬</a></h2>
+    <h3>Number type</h3>
+    <p>
+        파이썬에서 숫자형은 아래와 같이 있다.
+    </p>
+    <ol>
+        <li>int</li>
+        <li>float</li>
+        <li>complex</li>
+        <li><del>str</del></li>
+    </ol>
+
+    <h3>Sequence</h3>
+
+    <p>
+        파이썬에서 시퀀스는 아래와 같이 있다.        
+    </p>
+    <p>
+        <b>시퀀스는 for문을 돌릴 수 있다!!</b>
+    </p>
+    <ol style='list-style-type: hiragana'>
+        <li>str</li>
+        <li>list</li>
+        <li>tuple</li>
+        <li>range</li>
+    </ol>
+
+    <hr>
+
+    <h2><a href="https://developer.mozilla.org/ko/">웹</a></h2>
+    <h3>기초</h3>
+    <ul style='list-style-type:georgian'>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="python">파이썬</li>
+    </ul>
+    <!-- target="_self" : 현재창에서 열림 -->
+    <section id="link">
+        <a href="https://www.google.com/" target="_self">절대 url</a>
+        <a href="reference.html" target="_blank">상대 url</a>
+        <a href="#edu">교육으로 이동</a>
+        <a href="mailto:test@gmail.com">메일 보내기</a>
+    </section>
+     <!-- 유튜브 - 퍼가기 - html코드 그대로 복사 -->
+    <section>
+        <img src="images/python-1.png" width="200px" height="300px" alt="python">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jCk_wZgl2g0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section>
+        <table>
+            <tr>
+                <th></th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+            </tr>
+            <tr>                
+                <td>A코스</td>
+                <td colspan="2">짬뽕</td>
+                <td rowspan="2">초밥</td>
+            </tr>
+            <tr>
+                <td>B코스</td>
+                <td>김치찌개</td>
+                <td>삼계탕</td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <table>
+            <tr>
+                <th>TIME</th>
+                <th>INDOOR</th>
+                <th colspan="2">OUTDOOR</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>소극장</td>
+                <td>잔디마당</td>
+                <td>대공연장</td>
+            </tr>
+            <tr>
+                <td>10:00</td>
+                <td rowspan="2">안녕하신가영</td>
+                <td></td>
+                <td>10CM</td>
+            </tr>
+            <tr>
+                <td>13:00</td>                
+                <td rowspan="2">선우정아</td>
+                <td rowspan="2">참깨와 솜사탕</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td></td>                             
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td>크러쉬</td>
+                <td></td>
+                <td>폴킴</td>                
+            </tr>
+        </table><br><br>
+        <!-- form 실습 -->
+        <form action="https://www.google.com/search?">            
+            텍스트 : <input type="text" name="q" autofocus><br>
+            이메일 : <input type="email" autocomplete="on"><br>
+            비밀번호 : <input type="password"><br>
+            날짜 : <input type="date">
+            <input type="hidden" name="해커" value="이사람은 해커야">
+            <input type="submit" value="전송!"><br>
+            <!-- radio button -->
+            <!-- checked 첫 화면에 선택되어 있음 -->
+            <input type="radio" name="gender" value="female" checked>여자
+            <input type="radio" name="gender" value="man">남자<br>
+
+            <input type="checkbox" name="option" value="1">sia<br>
+            <input type="checkbox" name="option" value="2">queen<br>
+            <input type="checkbox" name="option" value="3">bieber<br>
+
+            <input type="number" name="size" min="5" max="60" step="5" value="15"><br>
+            <select name="country">
+                <option value="korea">한국</option>
+                <option value="japan" disabled>일본</option>
+                <option value="china" selected>중국</option>
+            </select>
+        </form>
+        <form>
+            <p>
+                <h1>FORM</h3>
+            </p> 
+            <p>
+                주문서를 작성하여 주십시오.
+            </p>
+
+            이름 : <input type="text" name="name" placeholder="이름을 입력해주세요"><br>                
+            날짜 : <input type="date" value="2019-01-03">
+            <p>
+                <h3>1. 샌드위치 선택</h3>
+            </p> 
+            <input type="checkbox" name="option" value="1" checked>에그 마요<br>
+            <input type="checkbox" name="option" value="2">이탈리안 비엠티<br>
+            <input type="checkbox" name="option" value="3">터키 베이컨 아보카도<br>
+            <hr>
+            <p>
+                <h3>2. 사이즈 선택</h3>
+            </p> 
+            
+            <select name="size">
+                <option value="size">10</option>
+                <option value="size" selected>15</option>
+                <option value="size">20</option>
+            </select>
+            <hr>
+            <p>
+                <h3>3. 빵</h3>
+            </p> 
+            <select name="size">
+                <option value="bread" selected>허니오트</option>
+                <option value="bread" disabled>플랫브래드</option>
+                <option value="bread">하티 이탈리안</option>
+            </select>
+            <hr>
+            <p>
+                <h3>4. 야채/소스</h3>
+            </p>
+            <input type="checkbox" name="option" value="1">토마토<br>
+            <input type="checkbox" name="option" value="2">오이<br>
+            <input type="checkbox" name="option" value="3">할라피뇨<br>
+            <input type="checkbox" name="option" value="4">핫 칠리<br>
+            <input type="checkbox" name="option" value="5">바베큐<br>
+
+
+            ID : <input type="text" name="q"><br>
+            PWD : <input type="password">
+            <input type="submit" value="로그인"><br>
+
+
+
+
+            
+        </form>
+
+    </section>
+    
+   
+    
+
+</body>
