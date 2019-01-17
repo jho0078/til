@@ -1,8 +1,15 @@
-def my_all(x):
+def my_languages(dic):
+    key_list = []
+    for value in dic.values():
+        if value >= 60:
+            key_list.append(value)
+    key_list.sort(reverse=True)
 
+    result = []
+    for i in key_list:
+        for key, value in dic.items():
+            if i == value:
+                result.append(key)
+    return result
 
-print(my_all([1, 2, 5, '6']))
-print(my_all([[], 2, 5, '6']))
-print(my_all([]))
-print(my_all([0]))
-
+print(my_languages({"Java": 10, "Ruby": 67, "Python": 89, "PHP": 61}))

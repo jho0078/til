@@ -1,0 +1,50 @@
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: darkgrey;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+/* 박스 사이즈를 보더박스 사이즈로 고정하겠다 */
+.border-box {
+    box-sizing: border-box;
+}
+/* 4개 일 때 top, right, bottom, left 순으로 적용 */
+/* 3개 일 때 top, right=left, bottom */
+/* margin: 25px 50px 25px; */   
+/* 2개 일 때 top=bottom, right=left */
+/* margin: 25px 50px;  */
+.margin-50 {
+    margin: 50px 50px 50px 50px;      
+}
+
+.margin-top-100 {
+    margin-top: 100px;
+}
+
+.margin-3 {
+    margin: 10px 20px 30px
+}
+
+.border {
+    /* 전체 두께, 색상, 속성 세 가지 스타일을 정해줄 수 있다.(순서 상관x) */
+    border: 1px black dashed;
+    border-style: dashed;
+    border-bottom-style: double;
+    border-top-style: solid;
+    border-left-style: inset;
+    border-bottom-color: aqua;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background-color: brown;  
+    border-top-right-radius: 70%;
+    border-bottom-left-radius: 70%;
+    border-top-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    opacity: 0.5;
+}

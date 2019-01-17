@@ -1,0 +1,28 @@
+/* 전체 셀렉터 */
+* {
+    color: crimson;
+}
+/* 전체 셀렉터의 우선순위가 가장낮다 */
+h1 {
+    color: darkblue;
+}
+
+.pink {
+    color: pink;
+}
+
+#green {
+    color:darkgreen;
+}
+
+h2 {
+    color: black;
+}
+
+.blue {
+    color: blue;
+}
+
+.bold {
+    font-weight: bold;
+}
