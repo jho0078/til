@@ -2,7 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a84db104-e070-4918-a631-fa421036e8e1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/1362406667-v2-idpiframe.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/30(1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/749446591-idpiframe_css_ltr.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/analytics.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/app.60567915570fa0af67f5.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/cb=gapi.loaded_0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/client.bundle.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/client.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/collections-black.9dc0b9b8f7804172b734.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/collections.0e197fd2ec35638b8d79.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/cookieConsent.3444d89cdde5e9d1cb02.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/core.81d2ccf0fccb37e1aa4c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/gtm.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/iframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/images.0a827509b19560815767.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/locale.en-US.ccd0777fd38cab7eecc4.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/ltp.c23953e62883d6ecdc77.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/manifest.94f72c924abda25295ae.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/power-up.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/power-up.min.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/quickload.a04ec9bd11582388e6e5.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/snowplow.93443bac94faed4678ce.js.다운로드" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/_ 포지션 실습 on 대전2반 _ Trello_files/style_stu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../html/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../html/test.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="19">
+              <caret line="1" column="1579" selection-start-line="1" selection-start-column="1579" selection-end-line="1" selection-end-column="1579" />
             </state>
           </provider>
         </entry>
@@ -74,9 +103,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="929" />
-    <option name="y" value="74" />
-    <option name="width" value="971" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -87,7 +115,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -104,6 +131,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -182,9 +210,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="929" y="74" width="971" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25080386" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -256,8 +284,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="19">
+          <caret line="1" column="1579" selection-start-line="1" selection-start-column="1579" selection-end-line="1" selection-end-column="1579" />
         </state>
       </provider>
     </entry>
