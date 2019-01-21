@@ -19,3 +19,18 @@ for tc in range(T):
 
     print("#{} {}".format(tc+1, result))
 
+    #2. max, min을 첫번째 값으로 잡고 시작
+    #
+    # N = int(input())
+    # data = list(map(int, input().split()))
+    # result = 0
+    # max = data[0]
+    # min = data[0]
+    #
+    # for i in range(1, N):
+    #     if data[i] > max:
+    #         max = data[i]
+    #     if data[i] < min:
+    #         min = data[i]
+    # result = max - min
+

@@ -10,19 +10,12 @@ for tc in range(10):
         min = 458888888
         for i in range(len(data)):
             if data[i] > max:
-                max = data[i]
+                max_index = i
             if data[i] < min:
-                min = data[i]
+                min_index = i
+            data[max_index] -= 1
+            data[min_index] += 1
 
-        for j in range(len(data)):
-            if data[j] == max:
-                data[j] -= 1
-                break
-
-        for k in range(len(data)):
-            if data[k] == min:
-                data[k] += 1
-                break
     max = 0
     min = 458888888
     for m in range(len(data)):
