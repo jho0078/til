@@ -3,9 +3,10 @@ sys.stdin = open("Sum_input.txt")
 T = 10
 for tc in range(1, T+1):
     N = int(input())
-    arr = [[0 for _ in range(10)] for _ in range(100)]
+    arr = [[0 for _ in range(100)] for _ in range(100)]
     for i in range(100):
         arr[i] = list(map(int, input().split()))
+    print(arr)
 
     sum_max = 0
     sum_diagonal = 0
