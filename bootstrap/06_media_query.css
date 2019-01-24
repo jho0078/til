@@ -1,0 +1,101 @@
+/* @media (조건문) {
+    실행문;
+} */
+
+/* 600px 이상일 때 색깔이 바뀐다. */
+/* @media (min-width: 600px) {
+    h1 {
+        color: crimson;
+    }
+}
+/* 최대 500px 이하까지는 darkgreen이다.  */
+/* @media (max-width: 500px) {
+    h2 {
+        color: darkgreen;
+    }
+} */ 
+
+/* @media (orientation: landscape) */
+p.orientation::after {
+    content: "가로입니다."
+}
+
+@media (orientation: portrait) {
+    p.orientation::after {
+        content: "세로입니다."
+    }
+}
+
+/* rainbow */
+@media (min-width: 400px) {
+    .rainbow {
+        color: red;
+    }
+}
+
+@media (min-width: 500px) {
+    .rainbow {
+        color: orange;
+    }
+}
+
+@media (min-width: 600px) {
+    .rainbow {
+        color: yellow;
+    }
+}
+
+@media (min-width: 700px) {
+    .rainbow {
+        color: green;
+    }
+}
+
+@media (min-width: 800px) {
+    .rainbow {
+        color: blue;
+    }
+}
+
+@media (min-width: 900px) {
+    .rainbow {
+        color: pink;
+    }
+}
+
+@media (min-width: 1000px) {
+    .rainbow {
+        color: purple;
+    }
+}
+
+/* 두 가지 모두 만족할 시 violet (,:or와 not 있음) */
+@media (max-height: 500px) and (max-width: 500px) {
+    h3 {
+        color: violet;
+    }
+} 
+
+@media only print {
+    h4 {
+        color: red;
+    }
+}
+
+
+
+@media (min-width: 576px) {
+    ...
+}
+
+@media (min-width: 768px) {
+    ...
+}
+
+@media (min-width: 992px) {
+    ...
+}
+
+@media (min-width: 1200px) {
+    ...
+}
