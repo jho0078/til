@@ -1,0 +1,26 @@
+
+h2 {
+    font-family: 'East Sea Dokdo', cursive;
+}
+
+a {
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.section {
+    height: 350px;
+    background-image: url("assets/pink.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;            
+}      
+
+.footer {
+    position: fixed;
+    height: 70px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+                
+    background: pink;            
+}

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=East+Sea+Dokdo|Nanum+Pen+Script');
+
+.underline {
+    width: 70px;
+    background: yellow;
+}
+
+.section {   
+    height: 350px; 
+    background-image: url("assets/pink.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;            
+}      
+
+.footer {
+    position: fixed;
+    height: 70px;
+    left: 0;
+    bottom: 0;
+    width: 100%;                
+    background: pink;            
+}
