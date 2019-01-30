@@ -5,7 +5,7 @@
     background: yellow;
 }
 
-/* header {   
+header {   
     height: 350px; 
     background-image: url("assets/pink.jpg"); 
     background-size: cover;
@@ -16,23 +16,26 @@
 }    
 
 header:hover {
-    
+    /* -webkit-filter: unset; 
+    filter: unset; */
     background-blend-mode: unset;
-  } */
+  }
 
-.section {   
+/* .section {   
     height: 350px; 
     background-image: url("assets/pink.jpg"); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
     background-color: grey;
-    background-blend-mode: unset;        
+    background-blend-mode: screen;        
 }    
 
-.section:hover {    
-    background-blend-mode: screen;
-  }   
+.section:hover {
+    /* -webkit-filter: unset; 
+    filter: unset; */
+    background-blend-mode: unset;
+  }   */
 
 .footer {
     position: fixed;
