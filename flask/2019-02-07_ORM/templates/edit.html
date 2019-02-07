@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <!--값 수정은 app.py의 update함수로 이동-->
+    <h1>여기는 수정페이지입니다.</h1>
+    <form action="/users/update/{{ user.id }}">
+        <input type="text" value="{{ user.username }}" name="username"/>
+        <input type="text" value="{{ user.email }}" name="email"/>
+        <input type="submit" value="submit"/>
+    </form>
+{% endblock %}
