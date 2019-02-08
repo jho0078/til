@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div class="alert alert-info text-center" role="alert">
+        영화정보를 수정해주세요.
+    </div>
+    <!--bootstrap 작업 전-->
+        <!--<li><input type="text" name="title" value="{{ movie.title }}"/></li>-->
+        <!--<li><input type="text" name="title_en" value="{{ movie.title_en }}"/></li>-->
+        <!--<li><input type="number" name="audience" value="{{ movie.audience }}"/></li>-->
+        <!--<li><input type="date" name="open_date" value="{{ movie.open_date }}"/></li>-->
+        <!--<li><input type="text" name="genre" value="{{ movie.genre }}"/></li>-->
+        <!--<li><input type="text" name="watch_grade" value="{{ movie.watch_grade }}"/></li>-->
+        <!--<li><input type="number" name="score" value="{{ movie.score }}"/></li>-->
+        <!--<li><input type="text" name="poster_url" value="{{ movie.poster_url }}"/></li>-->
+        <!--<li><textarea name="description" cols="40" rows="8"/>{{ movie.description }}</textarea></li>-->
+        <!--<li><input type="submit" value="Submit"/></li>-->
+    
+    <!--bootstrap 작업 후-->
+    <form action="/movies/{{ movie.id }}/update/">
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">영화명</span>
+            </div>
+            <input type="text" class="form-control" name="title" value="{{ movie.title }}">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">영화명(영문)</span>
+            </div>
+            <input type="text" class="form-control" name="title_en" value="{{ movie.title_en }}">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">누적 관객수</span>
+            </div>
+            <input type="number" class="form-control" name="audience" value="{{ movie.audience }}">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">개봉일</span>
+            </div>
+            <input type="date" class="form-control" name="open_date" value="{{ movie.open_date }}">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">장르</span>
+            </div>
+            <input type="text" class="form-control" name="genre" value="{{ movie.genre }}">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">관람등급</span>
+            </div>
+            <input type="text" class="form-control" name="watch_grade" value="{{ movie.watch_grade }}">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">평점</span>
+            </div>
+            <input type="number" step="0.5" class="form-control" name="score" value="{{ movie.score }}">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">포스터이미지 URL</span>
+            </div>
+            <input type="text" class="form-control" name="poster_url" value="{{ movie.poster_url }}">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">영화소개</span>
+            </div>
+            <textarea name="description" cols="40" rows="8" class="form-control">{{ movie.description }}</textarea>
+        </div>
+        <div class="input-group mb-3 container">
+            <input type="submit" class="form-control"value="Submit">
+        </div>
+    </form>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <ul class="nav justify-content-end">
+        <button type="button" class="btn btn-outline-dark"><a href="/movies/new/">새 영화 등록</a></button>
+    </ul>
+    
+    <ul>
+        <div class="container row d-flex mx-auto">
+            {% for movie in movies %}
+                <ul>
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{movie.poster_url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/movies/{{ movie.id }}/">{{ movie.title }}</a></h5>
+                            <p class="card-text">평점 : {{ movie.score }}</p>
+                            <a href="/movies/{{ movie.id }}/" class="btn btn-primary">영화정보 조회하기</a>
+                        </div>
+                    </div>
+                </ul>
+            {% endfor %}
+        </div>
+    </ul>
+    
+    
+{% endblock %}

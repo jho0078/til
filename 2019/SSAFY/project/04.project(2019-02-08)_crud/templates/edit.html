@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <form action="/movies/{{ movie.id }}/update/">
+        <li><input type="text" name="title" value="{{ movie.title }}"/></li>
+        <li><input type="text" name="title_en" value="{{ movie.title_en }}"/></li>
+        <li><input type="number" name="audience" value="{{ movie.audience }}"/></li>
+        <li><input type="date" name="open_date" value="{{ movie.open_date }}"/></li>
+        <li><input type="text" name="genre" value="{{ movie.genre }}"/></li>
+        <li><input type="text" name="watch_grade" value="{{ movie.watch_grade }}"/></li>
+        <li><input type="number" name="score" value="{{ movie.score }}"/></li>
+        <li><input type="text" name="poster_url" value="{{ movie.poster_url }}"/></li>
+        <li><textarea name="description" cols="40" rows="8"/>{{ movie.description }}</textarea></li>
+        <li><input type="submit" value="Submit"/></li>
+    </form>
+{% endblock %}

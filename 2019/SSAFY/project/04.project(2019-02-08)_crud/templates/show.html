@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block body %}
+<ul>
+    <li>영화명 : {{ movie.title }}</li>
+    <li>영화명(영문) : {{ movie.title_en }}</li>
+    <li>누적관객수 : {{ movie.audience }}</li>
+    <li>개봉일 : {{ movie.open_date }}</li>
+    <li>장르 : {{ movie.genre }}</li>
+    <li>관람등급 : {{ movie.watch_grade }}</li>
+    <li>평점 : {{ movie.score }}</li>
+    <li>포스터 이미지 url : {{ movie.poster_url }}</li>
+    <li>영화소개 : {{ movie.description }}</li>
+    <li>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-warning"><a href="/movies/">목록</a></button>
+            <button type="button" class="btn btn-warning"><a href="/movies/{{ movie.id }}/edit/">수정</a></button>
+            <button type="button" class="btn btn-danger"><a href="/movies/{{ movie.id }}/delete/">삭제</a></button>
+        </div>
+    </li>
+</ul>
+{% endblock %}

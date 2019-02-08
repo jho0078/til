@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div class="alert alert-info text-center" role="alert">
+        여기에 영화정보를 작성해주세요.
+    </div>
+    <form action="/movies/create/">
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">영화명</span>
+            </div>
+            <input type="text" class="form-control" name="title">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">영화명(영문)</span>
+            </div>
+            <input type="text" class="form-control" name="title_en">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">누적 관객수</span>
+            </div>
+            <input type="number" class="form-control" name="audience">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">개봉일</span>
+            </div>
+            <input type="date" class="form-control" name="open_date">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">장르</span>
+            </div>
+            <input type="text" class="form-control" name="genre">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">관람등급</span>
+            </div>
+            <input type="text" class="form-control" name="watch_grade">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">평점</span>
+            </div>
+            <input type="number" step="0.5" class="form-control" name="score">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">포스터이미지 URL</span>
+            </div>
+            <input type="text" class="form-control" name="poster_url">
+        </div>
+        <div class="input-group mb-3 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">영화소개</span>
+            </div>
+            <textarea name="description" cols="40" rows="8" class="form-control"></textarea>
+        </div>
+        <div class="input-group mb-3 container">
+            <input type="submit" class="form-control"value="Submit">
+        </div>
+        <!--<input type="submit" value="Submit"/>-->
+        
+    </form>
+{% endblock %}
