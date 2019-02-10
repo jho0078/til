@@ -1,4 +1,4 @@
-git commit -m "D24 | 190207 PM | make gitignore"
+# gitlab project 올리는 법
 
 
 
@@ -11,7 +11,5 @@ git commit -m "D24 | 190207 PM | make gitignore"
 7. git push -u gitlab master
 8. settings-members-select memebers to invite-junokim-permission-maintainer
 
-pip install -U pip
 
-c9 open movie.html
 
