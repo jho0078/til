@@ -1,39 +1,27 @@
 import sys
 sys.stdin = open("ladder1_input.txt")
 
-def move_right(datas, a, b):
-    while b != 99 and datas[a][b] != 0:
-        b += 1
-    if b == 99: return b
-    if datas[a][b] == 0: return b - 1
-
-def move_left(datas, a, b):
-    while b != 0 and datas[a][b] != 0 :
-        b -= 1
-    if b == 0: return b
-    if datas[a][b] == 0: return b + 1
-
-
 for tc in range(1, 11):
     dummy = int(input())
     data = [list(map(int, (input().split()))) for i in range(100)]
 
-    for j in range(100):
-        for i in range(100):
-            if data[j][i] == 2:
-                y = j
-                x = i
-
+    y = 99
+    x = data[99].index(2)
 
     while y > 0:
         y -= 1
+
         if x < 99 and data[y][x + 1] == 1:
-            x = move_right(data, y, x)
+            x += 1
+            while data[y-1][x] != 1:
+                x += 1
 
-        if x > 0 and data[y][x - 1] == 1:
-            x = move_left(data, y, x)
+        elif x > 0 and data[y][x - 1] == 1:
+            x -= 1
+            while data[y-1][x] != 1:
+                x -= 1
 
-        if y == 0:
+        elif y == 0:
             print("#{} {}".format(tc, x))
 
 
