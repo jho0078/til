@@ -17,9 +17,9 @@ def BruteForce(p, t):
     j = 0
     while j<len(p) and i<len(t):
         if t[i] != p[j]:
-            i = i - j
-            j = -1
-        i = i + 1
+            i = i - j     # 서로 다른 문자가 나올 시 비교를 처음 시작했던 자리로 이동
+            j = -1        # j = 0 으로 초기화(아래에서 +1 하기 때문에 -1로 해줌)
+        i = i + 1  #  i와 j를 1씩 더해가면서 비교
         j = j + 1
     if j == len(p):
         return 1
