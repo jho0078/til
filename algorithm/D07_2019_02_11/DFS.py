@@ -27,6 +27,3 @@ def dfs(items, v):
                 dfs(items, i)
 
 dfs(hangyol, 1)
-
-def dfs(items, v):
-    

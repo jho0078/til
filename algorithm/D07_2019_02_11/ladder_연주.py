@@ -27,11 +27,14 @@ for t in range(10):
         if isWall(row+dx[di], column+dy[di]) == False and data[row+dx[di]][column+dy[di]] == 1:  # 벽이 아니거나 1이면 이동함
             row += dx[di]
             column += dy[di]
-            print(column)
+            data[row][column] = 0
             if di == 2:
                 di = 0
         else:
             di = (di+1) % 3
+
     print(column)
 
-data[row][column] = 0
+
+
+
