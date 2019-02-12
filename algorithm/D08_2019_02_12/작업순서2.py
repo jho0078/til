@@ -1,25 +1,49 @@
 import sys
 sys.stdin = open("작업순서_input.txt")
 
-for tc in range(1):
+def my_sort():
+    result = []
+    while True:
+        for i in range(len(indegree)):
+            if indegree[i] == 0:
+                result.append(i)
+                indegree[i] -= 1
+                if indegree.count(-1) == len(indegree):
+                    return result
+                if i not in datas:
+                    break
+                else:
+                    for j in range(len(datas[i])):
+                        indegree[datas[i][j]] -= 1
+
+for tc in range(1, 11):
     V, E = map(int, input().split())
     data = list(map(int, input().split()))
 
+    datas = {}
+    for i in range(0, len(data), 2):
+        if data[i] not in datas:
+            datas.update({data[i]: [data[i+1]]})
+        else:
+            datas[data[i]].append(data[i+1])
+
+    indegree = [0]*(V+1)
+
+    indegree[0] = -1
+    for i in range(1, len(data), 2):
+        indegree[data[i]] += 1
+
+    print("#{} {}".format(tc, " ".join(map(str, my_sort()))))
 
 
-    # # 인접행렬
+
+# # 인접행렬
     # items = [[0 for i in range(V+1)] for j in range(V+1)]
     #
     # for i in range(0, len(data), 2):
     #     items[data[i]][data[i+1]] = 1
 
-    items = {}
-    for i in range(0, len(data), 2):
-        if data[i] not in items:
-            items.update({data[i]: [data[i+1]]})
-        else:
-            items[data[i]].append(data[i+1])
-    print(items)
+
 
 #
 # def dfs(data):
