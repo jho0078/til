@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block title %} not_found {% endblock %} 
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'detail/stylesheets/style.css' %}" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+
+<header>
+    <div class="d-flex align-items-center justify-content-center">
+        <h1>{{ not_found }}/는 없는 경로입니다. </h1>
+    </div>
+</header>
+
+{% endblock %}

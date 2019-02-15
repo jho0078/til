@@ -1,0 +1,22 @@
+header {
+    display:flex;
+    height:350px;
+    width:100%;
+    background-image: url('../images/preview.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background-color: grey;
+    color: black;
+}
+
+text_center {
+    text-align: center;
+}

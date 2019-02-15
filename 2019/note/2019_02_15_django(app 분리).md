@@ -5,7 +5,7 @@
 ### 1. settings.py
 
 ```
-'home.apps.HomeConfig',
+	'home.apps.HomeConfig',
     'utilities.apps.UtilitiesConfig',
 ]
 ```
@@ -53,6 +53,8 @@ urlpatterns = [
 ### 3. templates
 
 > templates 폴더 안에 app의 이름을 가진 폴더를 생성 후 그 안에 template들을 저장한다.
+>
+> template들의 경로를 모두 변경한다.
 
 
 
