@@ -1,6 +1,20 @@
+## Django
+
+- 다소 독선적
+
+  > 독선적 (Opinionated) : 개발자의 자유도가 적다. 보다 안정적
+  >
+  > 관용적 : 개발자의 자유도가 높다.
+
+- 파이썬 사용
+
+
+
 ### 0. 준비
 
-1. 파이썬 설치
+1. pyenv 설치
+
+   > pyenv : 프로젝트 별로 각각 맞는 다양한 python 버전으로 실행해 볼 수 있도록 환경 제공
 
    ```python
    # install pyenv
@@ -18,7 +32,9 @@
    Python 3.6.7
    ```
 
-2.  virtualenv 설치
+2. virtualenv 설치
+
+   > virtualenv : python 프로젝트마다 각각의 가상환경을 만들어 준다.
 
    ```python
    # install pyenv-virtualenv
@@ -52,10 +68,6 @@
    jho0078:~/workspace/PROJECT01 $ pyenv local django-venv 
    (django-venv) jho0078:~/workspace/PROJECT01 $ pip install django 
    (django-venv) jho0078:~/workspace/PROJECT01 $ pip install --upgrade pip
-       
-   # 프로젝트 생성(이름: django_intro)
-   # 마지막 .을 붙이면 현재 위치에 만든다.
-   (django-venv) jho0078:~/workspace/PROJECT01 $ django-admin startproject django_intro .
    ```
 
 5. gitignore
@@ -92,14 +104,14 @@
    ALLOWED_HOSTS = ["*"]
    ```
 
-3.  gitignore 설정
+3. gitignore 설정
 
    ```python
    (django-venv) jho0078:~/workspace/PROJECT01 $ touch .gitignore
    (django-venv) jho0078:~/workspace/PROJECT01 $ ls -al #파일 있는지 확인
    ```
 
-4.  TIMEZONE/LANGUAGE_CODE 설정
+4. TIMEZONE/LANGUAGE_CODE 설정
 
    ```python
    # 한국어/시간 설정
@@ -109,7 +121,11 @@
 
 5. 로켓 페이지 한글화 확인
 
+   > python manage.py runserver $IP:$PORT 
+
 6. 프로젝트 구조
+
+   > tree : 폴더 구조를 볼 수 있다.
 
    `manage.py` : 장고 프로젝트와 다양한 방법으로 상호작용 하는 커맨드라인 유틸리티
 
@@ -167,11 +183,17 @@
 
 ### 3. views - urls
 
-우리는 앞으로
+코드 작성 순서
 
-1. views
-2. urls
-3. template 순으로 코드를 작성 할 겁니다.
+1. 처리할 views (controller)
+
+2. 요청 urls
+
+3. 결과를 보여줄 template 
+
+4.  실행
+
+   > python manage.py runserver $IP:$PORT
 
 * HttpResponse 로 첫 리턴 값 출력해보기
 * path(route, views, name) 2개의 필수 인수와 1개의 선택 인수
@@ -195,6 +217,8 @@
 
 #### 4.2 Variable Routing
 
+> value를 넘길 때는 딕셔너리 형태로 넘긴다.
+
 ```python
 def hello(request, name):
 	return render(request, 'hello.html', {'name' : name})
@@ -203,6 +227,22 @@ def hello(request, name):
 
 
 ### 5. Form data(get/post)
+
+POST 방식
+
+- 보통 데이터 베이스 값을 넣을 때 사용
+- 때문에 보안을 위해 값을 넘겨줄 때 토큰 값을 같이 넘겨줘야 한다.
+
+```html
+<form action="/home/user_create/" method="POST">        
+    {% csrf_token %}
+    <input type="text" name="nickname"/>
+    <input type="text" name="password"/>
+    <input type="submit" value="Submit"/>
+</form>
+```
+
+
 
 ````pthon
 request.Get.get('data')
