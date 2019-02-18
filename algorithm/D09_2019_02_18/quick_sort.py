@@ -9,15 +9,20 @@ def partition(a, l, r):
     j = r
 
     while i < j:
+        # array의 왼쪽에서부터 pivot 보다 큰 값을 찾는다.
         while a[i] <= pivot:
             i += 1
             if(i == r): break
+
+        # array의 오른쪽에서부터 pivot 보다 작은 값을 찾는다.
         while a[j] >= pivot:
             j -= 1
             if(j == l): break
+
+        # 두 값의 위치를 바꾼다.
         if i < j:
             a[i], a[j] = a[j], a[i]
-    arr[l], arr[j] = arr[j], arr[l]
+    a[l], a[j] = a[j], a[l]
     return j
 
 def quicksort(a, low, high):
