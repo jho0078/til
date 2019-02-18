@@ -19,3 +19,4 @@ for tc in range(1, T+1):
 
     print("#{} {}".format(tc, int(result)))
 
+# 점화식 : f(n) = f(n-1) + 2*f(n-2)

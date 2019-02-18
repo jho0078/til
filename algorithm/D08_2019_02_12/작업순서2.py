@@ -26,6 +26,7 @@ for tc in range(1, 11):
             datas.update({data[i]: [data[i+1]]})
         else:
             datas[data[i]].append(data[i+1])
+    print(datas)
 
     indegree = [0]*(V+1)
 
