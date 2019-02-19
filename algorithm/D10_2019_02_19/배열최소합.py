@@ -1,7 +1,8 @@
 def process_solution(a, k):
+    sum = []
     for i in range(1, k+1):
-        print(data[a[i]], end=" ")
-    print()
+        for j in range()
+            sumlist.append
 
 def make_candidates(a, k, input, c):
 
@@ -35,8 +36,49 @@ def backtrack(a, k, input):
             backtrack(a, k, input)
 
 
-MAXCANDIDATES = 100
-NMAX = 100
-data = [0, 1, 2, 3]
-a = [0] * NMAX
-backtrack(a, 0, 3)
+
+
+
+
+import sys
+sys.stdin = open("배열최소합_input.txt")
+
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    datas = [list(map(int, input().split())) for _ in range(N)]
+
+    MAXCANDIDATES = 100
+    NMAX = 100
+    data = [0] * (N+1)
+    for i in range(N+1):
+        data[i] = i
+    a = [0] * NMAX
+    backtrack(a, 0, 3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
