@@ -5,35 +5,6 @@ for tc in range(1, 11):
     n = int(input())
     string = list(input())
 
-    # isp = {'(': 0, '+': 1, '-':1, '*':2, '/':2, ')': -1}
-    # icp = {'(': 3, '+': 1, '-':1, '*':2, '/':2}
-
-    # isp = {'(': 0, '+': 1, '*': 2, ')': -1}
-    # icp = {'(': 3, '+': 1, '*': 2}
-    #
-    # stack = []
-    # result = []
-
-    # icp : 외부, isp : 내부
-    # for i in string:
-    #     if i not in isp:
-    #         result.append(i)
-    #
-    #     elif stack == []:
-    #         stack.append(i)
-    #
-    #     elif i == ')':
-    #         while stack[-1] != '(':
-    #             result.append(stack.pop())
-    #
-    #     elif icp[i] >  isp[stack[-1]]:
-    #         stack.append(i)
-    #
-    #     elif icp[i] <=  isp[stack[-1]]:
-    #         while icp[i] <=  isp[stack[-1]]:
-    #             result.append(stack.pop())
-    #         stack.append(i)
-
     stack = []
     result = []
     susic = "()+*"
@@ -54,7 +25,9 @@ for tc in range(1, 11):
             if stack == [] or stack[-1] == '(':
                 stack.append(i)
             else:
-                result.append(i)
+                while stack[-1] != '(':
+                    result.append(stack.pop())
+                stack.append(i)
 
         elif i == '*':
             stack.append(i)
@@ -86,3 +59,31 @@ for tc in range(1, 11):
 
     # print("#{} {}".format(tc, tournament(0, n-1)+1))
 
+# isp = {'(': 0, '+': 1, '-':1, '*':2, '/':2, ')': -1}
+    # icp = {'(': 3, '+': 1, '-':1, '*':2, '/':2}
+
+    # isp = {'(': 0, '+': 1, '*': 2, ')': -1}
+    # icp = {'(': 3, '+': 1, '*': 2}
+    #
+    # stack = []
+    # result = []
+
+    # icp : 외부, isp : 내부
+    # for i in string:
+    #     if i not in isp:
+    #         result.append(i)
+    #
+    #     elif stack == []:
+    #         stack.append(i)
+    #
+    #     elif i == ')':
+    #         while stack[-1] != '(':
+    #             result.append(stack.pop())
+    #
+    #     elif icp[i] >  isp[stack[-1]]:
+    #         stack.append(i)
+    #
+    #     elif icp[i] <=  isp[stack[-1]]:
+    #         while icp[i] <=  isp[stack[-1]]:
+    #             result.append(stack.pop())
+    #         stack.append(i)
