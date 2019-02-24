@@ -13,7 +13,7 @@
   
   #red {
     position: absolute;
-    background-color: red;
+    background-color: red;    
     right: 0px;
     bottom: 0px;
   }
@@ -36,15 +36,15 @@
   }
   
   #blue {
-    position: relative;
+    position: absolute;
     background-color: blue;
     top: 100px;
     left: 100px;
-    /* relative를 사용 */
+    /* relative를 사용 */    
   }
   
   #pink {
-    position: absolute;   
+    /* position: absolute;    */
     background-color: pink;
     top: 0px
   }
