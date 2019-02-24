@@ -33,7 +33,6 @@
     left: 200px;
     border-top-right-radius: 70%;
     border-bottom-left-radius: 70%
-
   }
   
   #blue {
@@ -48,15 +47,13 @@
     position: absolute;   
     background-color: pink;
     top: 0px
-
   }
 
   #purple {
     position: absolute;
     background-color: purple;
     left: 100px;
-    top: 100px;
-    
+    top: 100px;    
   }
 
   #orange {
