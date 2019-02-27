@@ -31,7 +31,7 @@ for tc in range(1, 11):
             connects[data[i]] += [data[i+1]]
         else:
             connects[data[i]] = [data[i+1]]
-            
+
     print("#{} {}".format(tc, sorted(contact(b))[-1][1]))
 
 # print(f'#{tc + 1} {len(visited) - 1 - visited[::-1].index(max(visited))}')
