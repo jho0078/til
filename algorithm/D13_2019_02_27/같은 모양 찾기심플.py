@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("같은 모양 찾기.txt")
+sys.stdin = open("같은 모양 찾기심플.txt")
 
 n = int(input())
 
