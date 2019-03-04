@@ -33,7 +33,6 @@ def stupid():
 N = int(input())
 acorns = list(map(int, input().split()))
 
-
 print(stupid(), smart())
 
 
