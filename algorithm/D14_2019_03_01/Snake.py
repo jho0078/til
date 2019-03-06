@@ -29,7 +29,11 @@ i = 0
 move = 0
 idx = 0
 # length = 1
+<<<<<<< HEAD
 body = []
+=======
+body = [(0, 0)]
+>>>>>>> 39c518effd5c185f1dea453ce9806cd8d4341149
 while True:
 
     # D(정방향), L(역방향)
@@ -46,20 +50,28 @@ while True:
                     body.insert(0, (y, x))
                     table[y][x] = 2
 
+<<<<<<< HEAD
                     print(f'move: {move}')
                     for j in range(N + 1):
                         print(table[j])
 
+=======
+>>>>>>> 39c518effd5c185f1dea453ce9806cd8d4341149
                     y = ny
                     x = nx
                     eraser = body.pop(-1)
                     table[eraser[0]][eraser[1]] = 0
+<<<<<<< HEAD
+=======
+
+>>>>>>> 39c518effd5c185f1dea453ce9806cd8d4341149
                     move += 1
                 elif table[ny][nx] == 1:
                     body.insert(0, (y, x))
                     table[y][x] = 2
                     y = ny
                     x = nx
+<<<<<<< HEAD
 
                     print(f'move: {move}')
                     for j in range(N + 1):
@@ -99,7 +111,36 @@ while True:
 
 
 
+=======
+>>>>>>> 39c518effd5c185f1dea453ce9806cd8d4341149
 
+                    move += 1
 
+                print()
+            elif iswall(ny, nx) or table[ny][nx] == 2:
+                print(move+1)
+                break
 
+        elif move == int(data[idx][0]):
+            if data[idx][1] == 'D':
+                i = (i + 1)%4
+                idx += 1
+            else:
+                i = (i - 1)%4
+                idx += 1
 
+    else:
+        if not iswall(ny, nx) and table[ny][nx] != 2:
+            body.insert(0, (y, x))
+            table[y][x] = 2
+            y = ny
+            x = nx
+            move += 1
+
+            if table[ny][nx] == 0:
+                eraser = body.pop(-1)
+                table[eraser[0]][eraser[1]] = 0
+
+        elif iswall(ny, nx) or table[ny][nx] == 2:
+            print(move + 1)
+            break

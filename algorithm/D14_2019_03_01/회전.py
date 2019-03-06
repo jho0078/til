@@ -52,8 +52,12 @@ for i in range(100000):
         #     for y in range(n):
         #         for x in range(n):
         #             print(str(data[x][n-1-y]), end=' ')
+<<<<<<< HEAD
         #         print()
 
 
 
 
+=======
+        #         print()
+>>>>>>> 39c518effd5c185f1dea453ce9806cd8d4341149

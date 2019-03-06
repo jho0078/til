@@ -8,7 +8,6 @@ def iswall(y, x):
     else:
         return False
 
-
 N = int(input())
 K = int(input())
 table = [[0 for _ in range(N + 1)] for _ in range(N + 1)]
@@ -51,7 +50,6 @@ while True:
             elif iswall(ny, nx) or table[ny][nx] == 2:
                 print(time + 1)
                 break
-
 
         elif time == int(data[idx][0]):
             if data[idx][1] == 'D':
