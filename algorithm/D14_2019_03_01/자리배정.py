@@ -9,7 +9,6 @@ def iswall(y, x):
 def find(K):
     if K == 1:
         return 1, 1
-
     i = 0
     y = 1
     x = 1
@@ -19,10 +18,8 @@ def find(K):
     while True:
         dy = [1, 0, -1, 0]
         dx = [0, 1, 0, -1]
-
         ny = y + dy[i]
         nx = x + dx[i]
-
         if not iswall(ny, nx) and (nx,ny) not in table:
             table.append((x,y))
             # print(table)
@@ -33,7 +30,6 @@ def find(K):
 
             if number == K:
                 return x, y
-
         else:
             i = (i + 1)%4
 
