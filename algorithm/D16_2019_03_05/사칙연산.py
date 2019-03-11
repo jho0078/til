@@ -1,6 +1,11 @@
 import sys
 sys.stdin = open("사칙연산_input.txt")
 
+def postorder(node):
+    global N
+
+    if firstchild
+
 T = 10
 for tc in range(1, T+1):
     N = int(input())
