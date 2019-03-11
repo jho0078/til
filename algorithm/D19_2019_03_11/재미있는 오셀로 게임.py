@@ -30,15 +30,26 @@ for tc in range(1, T+1):
             for h in range(1, 9):
                 nx1 = x + dx[i]*h
                 ny1 = y + dy[i]*h
-                if not iswall(ny1, nx1) and table[ny1][nx1] == 0:
+                if iswall(ny1, nx1) or table[ny1][nx1] == 0:
                     break
                 else:
-                    if not iswall(ny1, nx1) and table[ny1][nx1] == color:
+                    if table[ny1][nx1] == color:
                         for k in range(1, h):
                             nx1 = x + dx[i] * k
                             ny1 = y + dy[i] * k
                             table[ny1][nx1] = color
                         break
+
+
+                # if not iswall(ny1, nx1) and table[ny1][nx1] == 0:
+                #     break
+                # else:
+                #     if not iswall(ny1, nx1) and table[ny1][nx1] == color:
+                #         for k in range(1, h):
+                #             nx1 = x + dx[i] * k
+                #             ny1 = y + dy[i] * k
+                #             table[ny1][nx1] = color
+                #         break
 
 
         for k in range(N):

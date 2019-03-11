@@ -19,6 +19,30 @@ def inspect():
     return 1
 
 def chain():
+    for_print = []
+    for i in range(2):
+        if i == 0:
+            for j in range(C - 1):
+                for K1 in range(K):
+                    for K2 in range(K):
+                        fall(0, j, K1)
+                        fall(0, j + 1, K2)
+                        chain()
+
+        else:
+            for j in range(C):
+                for K1 in range(K):
+                    for K2 in range(K):
+                        fall(1, j, K1)
+                        fall(0, j, K2)
+                        chain()
+        if inspect():
+            for m in range(len(for_print)):
+                print(' '.join(for_print[m]))
+
+
+
+
 
 def fall(y, x, K):
     while 1:
@@ -26,6 +50,9 @@ def fall(y, x, K):
             table[y][x] = K
             return
         y -= 1
+
+
+
 
 for_print = []
 for i in range(2):
