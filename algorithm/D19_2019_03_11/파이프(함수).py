@@ -1,3 +1,6 @@
+import time
+start_time = time.time()
+
 def iswall(y, x):
     if y >= N or x >= N:
         return True
@@ -5,32 +8,19 @@ def iswall(y, x):
         return False
 
 def right(ny, nx):
-    global now
     if not iswall(ny, nx) and table[ny][nx] == 0:
-        now = 0
-        gogoring(ny, nx)
+        gogoring(ny, nx, 0)
 
 def down(ny, nx):
-    global now
     if not iswall(ny, nx) and table[ny][nx] == 0:
-        now = 2
-        gogoring(ny, nx)
+        gogoring(ny, nx, 2)
 
 def cross(ny, nx):
-    global now
-    dx2 = [0, -1]
-    dy2 = [-1, 0]
-    if not iswall(ny, nx):
-        for j in range(2):
-            nx2 = nx + dx2[j]
-            ny2 = ny + dy2[j]
-            if table[ny2][nx2] == 1:
-                break
-        else:
-            now = 1
-            gogoring(ny, nx)
+    if not iswall(ny, nx) and table[ny][nx] == 0:
+        if table[ny-1][nx] == 0 and table[ny][nx-1] == 0:
+            gogoring(ny, nx, 1)
 
-def gogoring(y, x):
+def gogoring(y, x, status):
     global now, count
 
     if y == N-1 and x == N-1:
@@ -38,8 +28,10 @@ def gogoring(y, x):
         return
     dx = [1, 1, 0]
     dy = [0, 1, 1]
+
+
     # 오른쪽
-    if now == 0:
+    if status == 0:
         for i in range(2):
             nx = x + dx[i]
             ny = y + dy[i]
@@ -48,7 +40,7 @@ def gogoring(y, x):
             else:
                 cross(ny, nx)
     # 대각선
-    elif now == 1:
+    elif status == 1:
         for i in range(3):
             nx = x + dx[i]
             ny = y + dy[i]
@@ -73,5 +65,6 @@ table = [list(map(int, input().split())) for i in range(N)]
 # now : 현재상태 0: 오른쪽, 1: 대각선, 2: 아래
 now = 0
 count = 0
-gogoring(0, 1)
+gogoring(0, 1, 0)
 print(count)
+print("--- %s seconds ---" %(time.time() - start_time))
