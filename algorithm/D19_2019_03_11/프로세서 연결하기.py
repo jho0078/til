@@ -6,6 +6,13 @@ sys.stdin = open("프로세서 연결하기_input.txt")
 #         return True
 #     return False
 
+def compare(y, x):
+    if y < len(core) and x < len(core[y]):
+        print(core[y][x], y, x)
+        compare(y+1, x)
+        compare(y, x+1)
+    elif x == len()
+
 def connect(y, x, idx):
 
     dx = [1, -1, 0, 0]
@@ -25,23 +32,28 @@ def connect(y, x, idx):
 
 
 T = int(input())
-for tc in range(1, T+1):
+for tc in range(1, 2):
     N = int(input())
     table = [list(map(int, input().split())) for i in range(N)]
     core = []
     for i in range(1, N-1):
         for j in range(1, N-1):
             if table[i][j] == 1:
-                core.append([i,j])
+                core.append([[i,j]])
 
     print(core)
     for idx in range(len(core)):
-        connect(core[idx][0], core[idx][1], idx)
+        connect(core[idx][0][0], core[idx][0][1], idx)
 
-    print(core)
+    for idx in range(len(core)):
+        print(core[idx])
 
-    for i in range(len(core)):
-        for j in range(2, len(core[i]-2)):
-            abs(core[i][0] - core[i][j][0]) + abs(core[i][1] - core[i][j][1])
+    compare(0, 0)
+    # for i in range(len(core)):
+    #     for j in range(2, len(core[i]-2)):
+    #         abs(core[i][0] - core[i][j][0]) + abs(core[i][1] - core[i][j][1])
+
+
+
 
 

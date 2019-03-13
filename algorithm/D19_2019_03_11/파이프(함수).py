@@ -1,5 +1,5 @@
 import time
-start_time = time.time()
+
 
 def iswall(y, x):
     if y >= N or x >= N:
@@ -61,6 +61,7 @@ def gogoring(y, x, status):
                 cross(ny, nx)
 
 N = int(input())
+start_time = time.time()
 table = [list(map(int, input().split())) for i in range(N)]
 # now : 현재상태 0: 오른쪽, 1: 대각선, 2: 아래
 now = 0
