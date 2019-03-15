@@ -9,13 +9,6 @@ def find(idx, end, length, visited):
         if length < min_length:
             min_length = length
         return
-        # if count > max_count:
-        #     max_count = count
-        #     min_length = length
-        # elif count == max_count:
-        #     if length < min_length:
-        #         min_length = length
-        # return
 
     else:
         flag = 0
