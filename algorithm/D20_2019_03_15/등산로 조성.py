@@ -6,71 +6,64 @@ def iswall(y, x):
         return True
     return False
 
-def search(y, x):
-
-    queue.append([y, x])
-
-    while queue:
-        t = queue.pop(0)
-        y = t[0]
-        x = t[1]
-
-        dx = [1, -1, 0, 0]
-        dy = [0, 0, -1, 1]
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-            if not iswall(ny, nx) and visited[ny][nx] == 0 and table[ny][nx] < table[y][x]:
-                visited[ny][nx] = visited[y][x] + 1
-                queue.append([ny, nx])
-
-    for i in range(N):
-        print(visited[i])
-    print()
-
-    max_distance1 = 0
-    for i in range(N):
-        for j in range(N):
-            if visited[i][j] > max_distance1:
-                max_distance1 = visited[i][j]
-
-    return max_distance1
-
-
-T = int(input())
-for tc in range(1, T+1):
-    N, K = map(int, input().split())
-    table = [list(map(int, input().split())) for i in range(N)]
-
+def findmaxh():
     maxh = 0
     for i in range(N):
         for j in range(N):
             if table[i][j] > maxh:
                 maxh = table[i][j]
 
-    top = []
     for i in range(N):
         for j in range(N):
             if table[i][j] == maxh:
                 top.append([i, j])
-    print(top)
-    max_distance = 0
-    queue = []
 
+    return maxh
+
+def search(y, x, count):
+    global max_count
+
+    if count > max_count:
+        max_count = count
+
+    dx = [1, -1, 0, 0]
+    dy = [0, 0, -1, 1]
+
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if not iswall(ny, nx) and table[ny][nx] < table[y][x]:
+            search(ny, nx, count+1)
+
+T = int(input())
+for tc in range(1, T+1):
+    N, K = map(int, input().split())
+    table = [list(map(int, input().split())) for i in range(N)]
+
+    top = []
+    maxh = findmaxh()
+
+    max_count = 0
     for i in range(N):
         for j in range(N):
-            if table[i][j] != maxh:
+            if table[i][j] == maxh:
+                a = [i, j]
+            else:
+                a = []
 
-                table[i][j] -= K
-                for k in range(len(top)):
-                    visited = [[0 for _ in range(N)] for _ in range(N)]
-                    d = search(top[k][0], top[k][1])
+            # 좌표마다 공사하여 깎을 수 있는 모든 경우(0~K)를 적용
+            for k in range(K+1):
+                table[i][j] -= k
 
-                    if d > max_distance:
-                        max_distance = d
-                table[i][j] += K
+                # 최대높이를 공사할 경우 탐색 리스트에서는 제외외
+                for m in range(len(top)):
+                    if top[m] == a:
+                        continue
+                    else:
+                        search(top[m][0], top[m][1], 0)
+                table[i][j] += k
 
-    print(max_distance)
+    print("#{} {}".format(tc, max_count+1))
 
 
 
