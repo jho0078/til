@@ -25,6 +25,7 @@ def input_drug(idx, drug, film):
             if flag == 0:
                 return
 
+        # 약품을 넣지 않아도 조건을 만족한다면 바로 재귀를 빠져나온다.
         if drug == 0:
             min_drug = 0
             out = 1
