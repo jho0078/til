@@ -1,4 +1,5 @@
 import sys
+import copy
 sys.stdin = open("N-queen_input.txt")
 
 def iswall(y, x):
@@ -6,7 +7,7 @@ def iswall(y, x):
         return True
     return False
 
-def choose(idx):
+def choose(idx, table):
     global count
 
     if idx == N:
@@ -15,11 +16,12 @@ def choose(idx):
 
     for i in range(N):
         if table[idx][i] == 0:
-            marking(idx, i)
-            choose(idx+1)
+            copytable = copy.deepcopy(table)
+            copytable = marking(idx, i, copytable)
+            choose(idx+1, copytable)
 
-def marking(y, x):
-    table[y][x] = 1
+def marking(y, x, copytable):
+    copytable[y][x] = 1
     dx = [0, 1, 1, 1, 0, -1, -1, -1]
     dy = [-1, -1, 0, 1, 1, 1, 0, -1]
 
@@ -29,8 +31,9 @@ def marking(y, x):
             ny = y + dy[i]*h
             if iswall(ny, nx):
                 for j in range(1, h):
-                    table[y + dy[i]*j][x + dx[i]*j] = 1
+                    copytable[y + dy[i]*j][x + dx[i]*j] = 1
                 break
+    return copytable
 
 T = int(input())
 for tc in range(1, T+1):
@@ -39,14 +42,5 @@ for tc in range(1, T+1):
     # print(table)
 
     count = 0
-    choose(0)
+    choose(0, table)
     print("#{} {}".format(tc, count))
-
-    # for x in range(N):
-    #     for y in range(N):
-    #     queen(0, x)
-    #     table[0][x]
-    #
-    # for y in range(N):
-    #     if table
-    #
