@@ -16,7 +16,8 @@ asc = [[0,0,0,0],
        [1,1,1,1]]
 
 
-data = "0F97A3"
+# data = "0F97A3"
+data = "68B46DDB9346F4"
 
 def aToh(c):
     if c <= "9":
