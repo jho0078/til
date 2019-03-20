@@ -85,6 +85,7 @@ for tc in range(1, T+1):
                 table[i][j*4 + k] = asc[aToh(data[i][j])][k]
 
     t = []
+    s = []
     result = 0
     flag = 0
     for i in range(N):
@@ -104,9 +105,10 @@ for tc in range(1, T+1):
                                 check += save[m] * 3
                             else:
                                 check += save[m]
-
+                        s.append(sum(save))
                         if check % 10 == 0:
                             flag = 1
+                            t.append(sum(save))
                             result += sum(save)
 
                         break
@@ -123,4 +125,5 @@ for tc in range(1, T+1):
     else:
         print("#{} {}".format(tc, result))
     #
-    # print(t)
+    print(s)
+    print(t)
