@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("홈 방범 서비스_input2.txt")
+sys.stdin = open("홈 방범 서비스_input.txt")
 
 def iswall(y, x):
     global N
@@ -9,55 +9,37 @@ def iswall(y, x):
     return False
 
 def solution(y, x, max_count):
-    global K, N
 
-    # 아래, 위, 우, 좌
-    dx = [0, 0, 1, -1]
-    dy = [1, -1, 0, 0]
 
-    # 대각선
-    dx2 = [1, 1, -1, -1]
-    dy2 = [-1, 1, -1, 1]
-
-    K = 1
-    while True:
-        if K > N:
-            return max_count
-
+    for K in range(1, N+2):
         count = 0
-        if table[y][x] == 1:
-            count += 1
+        y_start = y - (K - 1)
+        x_start = x - (K - 1)
 
-        for i in range(4):
-            for j in range(1, K):
-                nx = x + dx[i] * j
-                ny = y + dy[i] * j
-                if not iswall(ny, nx):
-                    if table[ny][nx] == 1:
-                        if y == 4 and x == 5:
-                            print(ny, nx)
-                        count += 1
+        one = 1
+        two = 2
+        first_idx = K - 1
+        b = 1
 
-        for i in range(4):
-            for j in range(1, K-1):
-                nx = x + dx2[i] * j
-                ny = y + dy2[i] * j
-                if not iswall(ny, nx):
-                    if table[ny][nx] == 1:
-                        if y == 4 and x == 5:
-                            print(ny, nx)
-                        count += 1
+        for i in range(2*K - 1):
+            for j in range(b):
+                if not iswall(y_start + i, x_start + first_idx + j) and table[y_start + i][x_start + first_idx + j] == 1:
+                    count += 1
 
-        print(K, y, x, count)
-        if count*M - (K*K + (K-1)*(K-1)) >= 0 and count > max_count:
-            print(M, y, x, count, K, (K*K + (K-1)*(K-1)))
+            if first_idx == 0:
+                one = -one
+                two = -two
+            first_idx -= one
+            b += two
+
+        if count * M - (K * K + (K - 1) * (K - 1)) >= 0 and count > max_count:
             max_count = count
 
-        K += 1
+    return max_count
 
 
 T = int(input())
-for tc in range(1, 2):
+for tc in range(1, T+1):
     N, M = map(int, input().split())
     table = [list(map(int, input().split())) for i in range(N)]
     max_count = 0
@@ -65,6 +47,5 @@ for tc in range(1, 2):
     for i in range(N):
         for j in range(N):
             max_count = solution(i, j, max_count)
-            # max_count = c
 
-    print(max_count)
+    print("#{} {}".format(tc, max_count))
