@@ -24,16 +24,17 @@ def findpath(x,y,i,pathM,flag,cnt):
             y+= dy[i]
 
 def cal(I,C,M,cnt):     # 인풋,카운트, 지도좌표
-    global maxcnt, size
+    global maxcnt
 
     if I == len(cores):
         if C >= maxcnt:
 
-            ans.append((C,cnt))
+            # ans.append((C,cnt))
             maxcnt = C
             # print(M, len(M))
         return
 
+    # global cores, dx, dy
     now = cores[I]
     x = now[0]
     y = now[1]
@@ -52,19 +53,19 @@ def cal(I,C,M,cnt):     # 인풋,카운트, 지도좌표
         result = findpath(nx,ny,i,copyM,flag,cnt)
         if result[1] == True:
 
-            tempM = [ result[0][i][:] for i in range(size)]
+            # tempM = [ result[0][i][:] for i in range(size)]
             plus = result[2]
             # print(x,y,plus)
-            cal(I+1,C+1,tempM,plus)
+            cal(I+1,C+1,result[0],plus)
 
-        else:
-            # print(x, y, cnt)
-            cal(I+1,C,M,cnt)
+        # else:
+        #     # print(x, y, cnt)
+        #     cal(I+1,C,M,cnt)
 
 
 T = int(input())
 for _ in range(T):
-
+    global size
     size = int(input())
     mat = [ list(map(int,input().split())) for i in range(size)  ]
     # print(mat)
@@ -80,18 +81,19 @@ for _ in range(T):
                 cores.append((i,j))
 
     ans=[]
-
+    # global maxcnt
     maxcnt = -1
 
     cal(0,0,mat,0)
-
-    goal_ea = ans[-1][0]
-
-    mingoal = 99999999
-    for i in ans:
-        if i[0] == goal_ea:
-            if i[1]<mingoal:
-                mingoal = i[1]
-
-
-    print("#{} {}".format(_+1,mingoal))
+    print("#{} {}".format(_+1, maxcnt))
+    # print(ans[-1][0])
+    # goal_ea = ans[-1][0]
+    #
+    # mingoal = 99999999
+    # for i in ans:
+    #     if i[0] == goal_ea:
+    #         if i[1]<mingoal:
+    #             mingoal = i[1]
+    #
+    #
+    # print("#{} {}".format(_+1,mingoal))
