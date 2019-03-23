@@ -12,27 +12,15 @@ for tc in range(1, T+1):
     N, M, K = map(int, input().split())
     table = [list(map(int, input().split())) for i in range(K)]
 
-
     coordinate = []
     status = []
     for i in range(K):
         coordinate.append(table[i][:2])
         status.append(table[i][2:4])
-    # print(coordinate)
-    # print(status)
 
-    t = 0
-    while True:
-
-        if t == M:
-            result = 0
-            for i in range(len(status)):
-                result += status[i][0]
-            print("#{} {}".format(tc, result))
-            break
+    for t in range(M):
 
         # 1시간 경과, 좌표 이동
-        t += 1
         for i in range(len(coordinate)):
             if status[i][1] == 1:
                 coordinate[i][0] -= 1
@@ -47,7 +35,7 @@ for tc in range(1, T+1):
         b = [0, 2, 1, 4, 3]
         for i in range(len(coordinate)):
             if iswall(coordinate[i][0], coordinate[i][1]):
-                status[i][0] = status[i][0] // 2
+                status[i][0] = status[i][0]//2
                 status[i][1] = b[status[i][1]]
 
         # 동일한 좌표에 군집이 있을 경우 병합
@@ -56,15 +44,11 @@ for tc in range(1, T+1):
         new_status = []
         for i in range(len(coordinate)):
             if status[i][0] != 0:
-                # if coordinate[i] not in new_coordinate:
-                #     new_coordinate.append(coordinate[i])
-                #     new_status.append(status[i])
-                # else:
-                #     duplicate.append(coordinate[i])
-
                 if coordinate.count(coordinate[i]) > 1:
                     if coordinate[i] not in duplicate:
                         duplicate.append(coordinate[i])
+                    else:
+
                 else:
                     new_coordinate.append(coordinate[i])
                     new_status.append(status[i])
@@ -85,12 +69,7 @@ for tc in range(1, T+1):
         coordinate = new_coordinate
         status = new_status
 
-
-
-
-
-
-
-
-
-
+    result = 0
+    for i in range(len(status)):
+        result += status[i][0]
+    print("#{} {}".format(tc, result))

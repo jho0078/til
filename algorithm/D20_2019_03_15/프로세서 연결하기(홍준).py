@@ -1,4 +1,5 @@
 import sys
+import copy
 sys.stdin = open("프로세서 연결하기_input.txt")
 
 def iswall(x,y):
@@ -15,7 +16,7 @@ def findpath(x,y,i,pathM,flag,cnt):
             cnt+=1
             pathM[x][y]=2
             return pathM, flag ,cnt
-        if pathM[x][y] == 1 or pathM[x][y] ==2:
+        if pathM[x][y] == 1 or pathM[x][y] == 2:
             return pathM, flag ,cnt
         if pathM[x][y] == 0:
             pathM[x][y]=2
@@ -23,14 +24,14 @@ def findpath(x,y,i,pathM,flag,cnt):
             x+= dx[i]
             y+= dy[i]
 
-def cal(I,C,M,cnt):     # 인풋,카운트, 지도좌표
+def cal(I, M,cnt):     # 인풋,카운트, 지도좌표
     global maxcnt
 
     if I == len(cores):
-        if C >= maxcnt:
+        if cnt <= maxcnt:
 
             # ans.append((C,cnt))
-            maxcnt = C
+            maxcnt = cnt
             # print(M, len(M))
         return
 
@@ -44,7 +45,8 @@ def cal(I,C,M,cnt):     # 인풋,카운트, 지도좌표
 
     for i in range(4):
 
-        copyM = [ M[i][:] for i in range(size)  ]
+        copyM = copy.deepcopy(M)
+        # copyM = [ M[i][:] for i in range(size)  ]
         # print(x, y, copyM)
         nx = x+dx[i]
         ny = y+dy[i]
@@ -54,9 +56,9 @@ def cal(I,C,M,cnt):     # 인풋,카운트, 지도좌표
         if result[1] == True:
 
             # tempM = [ result[0][i][:] for i in range(size)]
-            plus = result[2]
+            # cnt = result[2]
             # print(x,y,plus)
-            cal(I+1,C+1,result[0],plus)
+            cal(I+1, result[0],result[2])
 
         # else:
         #     # print(x, y, cnt)
@@ -80,11 +82,11 @@ for _ in range(T):
                 # print(i,j,'안풋')
                 cores.append((i,j))
 
-    ans=[]
+    # ans=[]
     # global maxcnt
-    maxcnt = -1
+    maxcnt = 10000
 
-    cal(0,0,mat,0)
+    cal(0,mat,0)
     print("#{} {}".format(_+1, maxcnt))
     # print(ans[-1][0])
     # goal_ea = ans[-1][0]
