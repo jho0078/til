@@ -6,12 +6,10 @@ def iswall(y, x):
         return True
     return False
 
-
 T = int(input())
 for tc in range(1, T+1):
     N, M, K = map(int, input().split())
     table = [list(map(int, input().split())) for i in range(K)]
-
 
     coordinate = []
     status = []
