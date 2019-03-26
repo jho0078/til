@@ -11,5 +11,5 @@
 7. git push -u gitlab master
 8. settings-members-select memebers to invite-junokim-permission-maintainer
 
-
+`
 
