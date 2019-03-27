@@ -5,6 +5,19 @@
 # L : 왼쪽 구역 인덱스
 # R : 오른쪽 구역 인덱스
 
+def mergesort(s, e):
+    if s >= e:
+        return
+
+    m = (s+e)//2
+    mergesort(s, m)
+    mergesort(m+1, e)
+
+    L, R, T = s, m+1, s
+
+
+
+
 def MergeSort(s, e):
     if s >= e:
         return
