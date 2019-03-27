@@ -1,12 +1,6 @@
 import sys
 sys.stdin = open("도약.txt")
 
-def secondrange(i):
-    global N
-    for j in range(i, N):
-        if data[j] > (data[i] + data[N-1])//2:
-            return j-1
-
 # num 보다 작은 것들 중에서 가장 큰 값 탐색
 def uppersearch(s, e, num):
     up = -1
@@ -30,7 +24,7 @@ print(data)
 
 count = 0
 for i in range(N-2):
-    for j in range(i + 1, secondrange(i) + 1):
+    for j in range(i+1, N-1):
         start = data[j] + (data[j] - data[i])
         end = data[j] + (data[j] - data[i])*2
         up1 = uppersearch(j, N-1, start)
@@ -38,7 +32,5 @@ for i in range(N-2):
         count += up2 - up1
 
 print(count)
-
-
 
 
