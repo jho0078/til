@@ -5,7 +5,6 @@ def solution(s, e):
 
     while s <= e:
         m = (s+e)//2
-        max1 = m
         cost = 0
         for i in range(N):
             if data[i] <= m:
@@ -13,19 +12,41 @@ def solution(s, e):
             else:
                 cost += m
 
-        if budget == cost:
-            return max1
-        elif budget < cost:
-            e = m - 1
-        else:
+        if budget >= cost:
+            sol = m
             s = m + 1
 
-    return max1
+        else:
+            e = m - 1
+
+    return sol
 
 N = int(input())
 data = list(map(int, input().split()))
 budget = int(input())
-min_budget = min(data)
 max_budget = max(data)
 
-print(solution(min_budget, max_budget))
+print(solution(1, max_budget))
+
+
+# 그리디그리디
+N = int(input())
+arr = list(map(int, input().split()))
+budget = int(input())
+
+arr.sort()
+sol, tot = 0, 0
+for i in range(N):
+    if tot + arr[i]*(N-i) <= budget:
+        tot += arr[i]
+    else:
+        sol = (budget - tot)//(N-i)
+        break
+
+if sol:
+    print(sol)
+else:
+    print(arr[N-1])
+
+
+
