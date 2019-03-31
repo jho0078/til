@@ -12,6 +12,7 @@
 #         else:
 #             myset(s + 1, e)
 
+# 부분집합
 def myset(s, e):
     if s == e:
         print(*b)

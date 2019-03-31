@@ -15,6 +15,7 @@ b = [0]*3
 chk = [0]*3
 solution(0, 3, b)
 
+
 # def solution2(s, n):
 #     if s == n:
 #         print(*a)
