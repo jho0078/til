@@ -1,18 +1,18 @@
-def combi(s, n, d):
-    if s == n//2:
-        return
-
-    for i in range(s+1, N-n+1):
-        t[s] = tapes[i]
-        for j in range(i):
-            
-        t[]
-
-
+def Combination(n, r):
+    if r == 0:
+        print(*t)
+    else:
+        if n < r:
+            return
+        else:
+            t[r-1] = tapes[n-1]
+            Combination(n-1, r-1)
+            Combination(n-1, r)
 
 # 조합
 N = int(input())
 tapes = list(map(int, input().split()))
-combi(0, N//2, 0)
-t = [0]*N//2
+t = [0]*(N//2)
+Combination(N, N//2)
+
 
