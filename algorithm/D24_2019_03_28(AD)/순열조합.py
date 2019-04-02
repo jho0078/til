@@ -70,42 +70,67 @@
 # mpermution(0, n)
 # print("경우의 수 : {}".format(count))
 
-# 조합
-# nCr = n-1Cr-1 + n-1Cr , nC0 = 1
-def Combination(n, r):
-    if r == 0:
-        print(*T)
-    else:
-        if n < r:
-            return
-        else:
-            T[r-1] = a[n-1]
-            Combination(n-1, r-1)
-            Combination(n-1, r)
+# # 조합
+# # nCr = n-1Cr-1 + n-1Cr , nC0 = 1
+# def Combination(n, r):
+#     if r == 0:
+#         print(*T)
+#     else:
+#         if n < r:
+#             return
+#         else:
+#             T[r-1] = a[n-1]
+#             Combination(n-1, r-1)
+#             Combination(n-1, r)
+#
+#
+# n = 4
+# m = 3
+# T = [0]*m
+# a = [1, 2, 3, 4]
+# Combination(n, m)
+#
+# # 중복조합
+# # nHr = nHr-1 + n-1Hr , nH0 = 1
+# def Hombination(n, r):
+#     if r == 0:
+#         print(*T)
+#     else:
+#         if n < r:
+#             return
+#         else:
+#             T[r-1] = a[n-1]
+#             Hombination(n, r - 1)
+#             Hombination(n - 1, r)
+#
+# n = 4
+# m = 3
+# T = [0]*m
+# a = [1, 2, 3, 4]
+# Hombination(n, m)
 
+# 승주꿀이
+def Combinations(s, cnt):
+    global n
+
+    if cnt > 2:
+        return
+
+    if s == n:
+        if cnt == m:
+            for i in range(n):
+                if t[i] != 0:
+                    print(t[i], end=" ")
+            print()
+        return
+
+    t[s] = a[s]
+    Combinations(s+1, cnt+1)
+    t[s] = 0
+    Combinations(s+1, cnt)
 
 n = 4
-m = 3
-T = [0]*m
+m = 2
 a = [1, 2, 3, 4]
-Combination(n, m)
-
-# 중복조합
-# nHr = nHr-1 + n-1Hr , nH0 = 1
-def Hombination(n, r):
-    if r == 0:
-        print(*T)
-    else:
-        if n < r:
-            return
-        else:
-            T[r-1] = a[n-1]
-            Hombination(n, r - 1)
-            Hombination(n - 1, r)
-
-
-n = 4
-m = 3
-T = [0]*m
-a = [1, 2, 3, 4]
-Hombination(n, m)
+t = [0]*n
+Combinations(0,0)
