@@ -1,27 +1,35 @@
 def solution(y1, x1, d1):
-    queue = []
-    queue.append([y1,x1,d1,3])
-    while queue:
-        y, x, d, k = queue.pop(0)
-        dx, dy = [1, 0, -1, 0], [0, 1, -1, 0]
-        for i in range(4):
-            nx, ny = x + dx[i], y + dy[i]
-            if x >= 0 and y >= 0 and x <= N-1 and y <= N-1:
-                if data[ny][nx] == 0:
-                    if d == i+1
-                        if  k > 0:
-                            p = 1
-                            if visited[ny][nx] > visited[y][x] + p:
-                                queue.append([ny,nx,d,k-1])
-                        else:
-                            
-                    elif d == i
-                    if visited[ny][nx] > visited[y][x] + p
+
+    # 동서남북 : 1234
+    dr = [0,0,0,1,-1]
+    dc = [0,1,-1,0,0]
+
+    # L : 0, R : 1
+    turn = [[0,0],[4,3],[3,4],[1,2],[2,1]]
+
+    que = []
+    que.append([d1, y1, x1, 0])
+
+    while que:
+        d, y, x, c = que.pop(0)
+        for i in range(1, 4):
+            
+
+        for i in range(1, 4):
+
+
+
+
+
+
+
+
+
 
 
 
 M, N = map(int, input().split())
 data = [list(map(int, input().split())) for i in range(M)]
-visited = [[0]*N for i in range(M)]
+V = [[[0]*N for i in range(M)] for i in range(5)]
 y1, x1, d1 = map(int, input().split())
 y2, x2, d2 = map(int, input().split())
