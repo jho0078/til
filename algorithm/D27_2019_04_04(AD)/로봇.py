@@ -13,7 +13,7 @@ def solution(y1, x1, d1):
     while que:
         d, y, x, c = que.pop(0)
         for i in range(1, 4):
-            
+
 
         for i in range(1, 4):
 
