@@ -12,22 +12,8 @@ def solution(y1, x1, d1, y2, x2, d2):
 
     while que:
         d, y, x, c = que.pop(0)
-<<<<<<< HEAD
-        for i in range(1, 4):
-
-
-        for i in range(1, 4):
-
-
-
-
-
-
-
-=======
         if d == d2 and y == y2 and x == x2:
             return c
->>>>>>> 14b36fe28096291067bd0d6e717be8552ab33d16
 
         for k in range(1, 4):
             nx, ny = x + dx[d]*k, y + dy[d]*k
@@ -36,7 +22,7 @@ def solution(y1, x1, d1, y2, x2, d2):
             if data[ny][nx] == 1:
                 break
 
-            if data[ny][nx] == 0 and V[d][ny][nx] == 0:
+            if V[d][ny][nx] == 0:
                 V[d][ny][nx] = 1
                 que.append([d,ny,nx,c+1])
 

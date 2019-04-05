@@ -16,6 +16,9 @@ for tc in range(1, 2):
     N = data[0]
     D = [data[i:i+N] for i in range(1, len(data), N)]
     for i in range(N):
+        print(D[i])
+
+    for i in range(N):
         for j in range(N):
             if i != j and D[i][j] == 0:
                 D[i][j] = 999999999
