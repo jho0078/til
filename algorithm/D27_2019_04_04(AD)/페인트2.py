@@ -6,7 +6,9 @@ def marking(y, x):
     two = 2
     for i in range(N*3+1):
         for j in range(a):
-            if D[ys+i][first+j] 
+            if ys + i < 0 and first + j < 0 and ys + i >= N-1 and first + j >= N-1:
+                continue
+            if D[ys+i][first+j]
 
         if first == N:
             one = -1
