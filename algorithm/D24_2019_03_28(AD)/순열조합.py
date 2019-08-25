@@ -97,43 +97,46 @@
 # Combinations(0,0)
 
 # 조합
-def Combination(s, start):
-    global n, m
-
-    if s == m:
-        print(t)
-        return
-
-    for i in range(start, 4):
-        t[s] = i
-        Combination(s+1, i+1)
-        t[s] = 0
-
-n = 4
-m = 2
-a = [1, 2, 3, 4]
-t = [0]*m
-Combination(0,0)
-
-# 중복조합
-# def Combination2(s, start):
+# def Combination(s, start):
 #     global n, m
 #
 #     if s == m:
 #         print(t)
 #         return
 #
-#     for i in range(start, 7):
+#     for i in range(start, 4):
 #         t[s] = i
-#         Combination2(s+1, i)
+#         Combination(s+1, i+1)
 #         t[s] = 0
 #
 # n = 4
 # m = 2
 # a = [1, 2, 3, 4]
 # t = [0]*m
-# Combination2(0,0)
+# Combination(0,0)
 
+# 중복조합
+def Combination2(s, start):
+    global n, m
+
+    if s == m:
+        print(t)
+        return
+
+    for i in range(start, 7):
+        t[s] = i
+        Combination2(s+1, i)
+        t[s] = 0
+
+n = 4
+m = 2
+a = [1, 2, 3, 4]
+t = [0]*m
+Combination2(0,0)
+
+b = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+for i, j in b:
+    print(i, j)
 
 
 # # 조합
