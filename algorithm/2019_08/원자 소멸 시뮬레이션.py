@@ -4,7 +4,6 @@ sys.stdin = open("원자 소멸 시뮬레이션_input.txt")
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
-    # A = [[0]*4001 for i in range(4001)]
 
     # 시간 4000초, 범위 벗어나면 삭제
     data = [list(map(int, input().split())) for i in range(N)]
