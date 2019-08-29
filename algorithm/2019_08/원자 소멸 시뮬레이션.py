@@ -8,6 +8,7 @@ for tc in range(1, T+1):
 
     # 시간 4000초, 범위 벗어나면 삭제
     data = [list(map(int, input().split())) for i in range(N)]
+    print(data)
     for i in range(N):
         data[i][0], data[i][1] = 2*data[i][0], 2*data[i][1]
 
