@@ -37,6 +37,10 @@ def sol():
                 if not visited[i][j]:
                     check(i, j)
 
+        for i in range(len(A)):
+            print(A[i])
+        print()
+
         if flag == 0:
             return count
 
