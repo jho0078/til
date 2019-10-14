@@ -1,5 +1,3 @@
-
-
 def bfs(y, x, size, num):
     global time
 

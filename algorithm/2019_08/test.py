@@ -1,50 +1,35 @@
-def init():
-    r, c, a = map(int, input().split())
-    r -= 1
-    c -= 1
-    return [r, c, a]
+def solution(data):
+    result = []
+    time = data[0][1]
+    idx = 0
+    q = [data[0]]
+    print("data:", data)
+    while q:
 
-N, M, K = map(int, input().split())
-A = [list(map(int, input().split())) for _ in range(N)]
-trees = [init() for _ in range(M)]
-ground = [[5]*N for _ in range(N)]
-deads = []
-dr = (-1, -1, -1, 0, 0, 1, 1, 1)
-dc = (-1, 0, 1, -1, 1, -1, 0, 1)
-trees.sort(key=lambda x: x[2])
+        print("idx:", idx)
 
-def spring():
-    global deads
-    deads.clear()
-    for i, tree in enumerate(trees, 0):
-        if ground[tree[0]][tree[1]] < tree[2]:
-            deads.append(i)
-        else:
-            ground[tree[0]][tree[1]] -= tree[2]
-            tree[2] += 1
-def summer():
-    while deads:
-        r, c, a = trees.pop(deads.pop())
-        ground[r][c] += a//2
-def autumn():
-    global trees
-    for tree in trees:
-        if not tree[2]%5:
-            for d in range(8):
-                nr = tree[0] + dr[d]
-                nc = tree[1] + dc[d]
-                if 0 <= nr < N and 0 <= nc < N:
-                    deads.append([nr, nc, 1])
-    trees = deads + trees
+        n, t, p = q.pop(0)
+        time += p
+        result.append(n)
+        for i in range(idx+1, len(data)):
+            if data[i][1] <= time:
+              idx += 1
+              q.append(data[i])
+            else:
+                break
+        print("q:", q)
+        print("time:", time)
+        q = sorted(q, key=lambda x:x[2])
+        print("정렬 q:", q)
 
-def winter():
-    for i in range(N):
-        for j in range(N):
-            ground[i][j] += A[i][j]
+        if not q and idx+1 < len(data):
+            q.append(data[idx+1])
+            idx += 1
 
-for i in range(K):
-    spring()
-    summer()
-    autumn()
-    winter()
-print(len(trees))
+        print("result:", result)
+
+    return result
+
+data = [[1, 99999406, 100000], [2, 99999407, 100000], [3, 99999408, 100000], [4, 99999409, 100000], [5, 99999410, 100000], [6, 99999411, 100000], [7, 99999412, 100000], [8, 99999413, 100000], [9, 99999414, 100000], [10, 99999415, 100000], [11, 99999416, 100000], [12, 99999417, 100000]]
+print(solution(data))
+
