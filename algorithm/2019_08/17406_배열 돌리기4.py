@@ -24,7 +24,7 @@ def sol(n, A):
             check[i] = 1
             sol(n+1, newA)
             check[i] = 0
-            
+
 
 
 N, M, K = map(int, input().split())
